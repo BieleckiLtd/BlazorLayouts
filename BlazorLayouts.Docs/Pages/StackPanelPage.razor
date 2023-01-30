@@ -1,0 +1,185 @@
+@page "/stack-panel"
+@using BlazorLayouts
+
+<PageTitle>StackPanel</PageTitle>
+
+<h1>StackPanel</h1>
+
+<StackPanel Orientation="orientation" 
+            Justify="@justify"
+            Align="@align"
+            StretchChildren="@stretchChildren"
+            IsVisible="@isVisible"
+            HidingMode="@hidingMode"
+            IsEnabled="@isEnabled"
+            Margin="@margin.ToString()"
+            Padding="@padding.ToString()"
+            Spacing="@spacing.ToString()"
+            HorizontalScrollBar="@scrollBar"
+            VerticalScrollBar="@scrollBar"
+            Style="height: 300px" Background="lightgray">
+    <button class="btn btn-primary" @onclick="Click">One</button>
+    <button class="btn btn-primary">Two</button>
+    <button class="btn btn-primary">Three</button>
+    <button class="btn btn-primary">Four</button>
+    <button class="btn btn-primary">Five</button>
+</StackPanel>
+
+<StackPanel Orientation="Orientation.Horizontal"
+    Align="Align.Start"
+    Spacing="1rem"
+    Margin="1rem"
+    IsWrapping="true">
+    <div class="btn-group-vertical" role="group">
+        <input type="radio" class="btn-check" disabled name="orientation" id="Orientation.Label">
+        <label class="btn btn-outline-primary" for="Orientation.Label">Orientation</label>
+
+        <input type="radio" class="btn-check" name="orientation" id="Orientation.Vertical" checked @onclick="() => orientation = Orientation.Vertical">
+        <label class="btn btn-outline-primary" for="Orientation.Vertical">Vertical</label>
+
+        <input type="radio" class="btn-check" name="orientation" id="Orientation.Horizontal" @onclick="() => orientation = Orientation.Horizontal">
+        <label class="btn btn-outline-primary" for="Orientation.Horizontal">Horizontal</label>
+    </div>
+    
+    <div class="btn-group-vertical" role="group">
+        <input type="radio" class="btn-check" disabled name="justify" id="Justify.Label">
+        <label class="btn btn-outline-primary" for="Justify.Label">Justify</label>
+
+        <input type="radio" class="btn-check" name="justify" id="Justify.Start" checked @onclick="() => justify = Justify.Start">
+        <label class="btn btn-outline-primary" for="Justify.Start">Start</label>
+
+        <input type="radio" class="btn-check" name="justify" id="Justify.Center" @onclick="() => justify = Justify.Center">
+        <label class="btn btn-outline-primary" for="Justify.Center">Center</label>
+
+        <input type="radio" class="btn-check" name="justify" id="Justify.End" @onclick="() => justify = Justify.End">
+        <label class="btn btn-outline-primary" for="Justify.End">End</label>
+
+        <input type="radio" class="btn-check" name="justify" id="Justify.SpaceAround" @onclick="() => justify = Justify.SpaceAround">
+        <label class="btn btn-outline-primary" for="Justify.SpaceAround">SpaceAround</label>
+
+        <input type="radio" class="btn-check" name="justify" id="Justify.SpaceBetween" @onclick="() => justify = Justify.SpaceBetween">
+        <label class="btn btn-outline-primary" for="Justify.SpaceBetween">SpaceBetween</label>
+
+        <input type="radio" class="btn-check" name="justify" id="Justify.SpaceEvenly" @onclick="() => justify = Justify.SpaceEvenly">
+        <label class="btn btn-outline-primary" for="Justify.SpaceEvenly">SpaceEvenly</label>
+    </div>
+
+    <div class="btn-group-vertical" role="group">
+        <input type="radio" class="btn-check" disabled name="align" id="Align.Label">
+        <label class="btn btn-outline-primary" for="Align.Label">Align</label>
+
+        <input type="radio" class="btn-check" name="align" id="Align.Start" @onclick="() => align = Align.Start">
+        <label class="btn btn-outline-primary" for="Align.Start">Start</label>
+
+        <input type="radio" class="btn-check" name="align" id="Align.Center" @onclick="() => align = Align.Center">
+        <label class="btn btn-outline-primary" for="Align.Center">Center</label>
+
+        <input type="radio" class="btn-check" name="align" id="Align.End" @onclick="() => align = Align.End">
+        <label class="btn btn-outline-primary" for="Align.End">End</label>
+
+        <input type="radio" class="btn-check" name="align" id="Align.Stretch" checked @onclick="() => align = Align.Stretch">
+        <label class="btn btn-outline-primary" for="Align.Stretch">Stretch</label>
+
+        <input type="radio" class="btn-check" name="align" id="Align.Baseline" @onclick="() => align = Align.Baseline">
+        <label class="btn btn-outline-primary" for="Align.Baseline">Baseline</label>
+    </div>
+
+    <div class="btn-group-vertical" role="group">
+        <input type="radio" class="btn-check" disabled name="stretchChildren" id="StretchChildren.Label">
+        <label class="btn btn-outline-primary" for="StretchChildren.Label">StretchChildren</label>
+
+        <input type="radio" class="btn-check" name="stretchChildren" id="StretchChildren.None" checked @onclick="() => stretchChildren = StretchChildren.None">
+        <label class="btn btn-outline-primary" for="StretchChildren.None">None</label>
+
+        <input type="radio" class="btn-check" name="stretchChildren" id="StretchChildren.FirstChild" @onclick="() => stretchChildren = StretchChildren.FirstChild">
+        <label class="btn btn-outline-primary" for="StretchChildren.FirstChild">FirstChild</label>
+
+        <input type="radio" class="btn-check" name="stretchChildren" id="StretchChildren.LastChild" @onclick="() => stretchChildren = StretchChildren.LastChild">
+        <label class="btn btn-outline-primary" for="StretchChildren.LastChild">LastChild</label>
+
+        <input type="radio" class="btn-check" name="stretchChildren" id="StretchChildren.MiddleChildren" @onclick="() => stretchChildren = StretchChildren.MiddleChildren">
+        <label class="btn btn-outline-primary" for="StretchChildren.MiddleChildren">MiddleChildren</label>
+
+        <input type="radio" class="btn-check" name="stretchChildren" id="StretchChildren.AllChildren" @onclick="() => stretchChildren = StretchChildren.AllChildren">
+        <label class="btn btn-outline-primary" for="StretchChildren.AllChildren">AllChildren</label>
+    </div>
+
+    <div class="btn-group-vertical" role="group">
+        <input type="radio" class="btn-check" disabled name="isVisible" id="IsVisible.Label">
+        <label class="btn btn-outline-primary" for="IsVisible.Label">IsVisible</label>
+
+        <input type="radio" class="btn-check" name="isVisible" id="IsVisible.True" checked @onclick="() => isVisible = true">
+        <label class="btn btn-outline-primary" for="IsVisible.True">True</label>
+
+        <input type="radio" class="btn-check" name="isVisible" id="IsVisible.False" @onclick="() => isVisible = false">
+        <label class="btn btn-outline-primary" for="IsVisible.False">False</label>
+
+        <input type="radio" class="btn-check" disabled name="hidingMode" id="HidingMode.Label">
+        <label class="btn btn-outline-primary" for="HidingMode.Label">HidingMode</label>
+
+        <input type="radio" class="btn-check" name="hidingMode" id="HidingMode.Collapse" checked @onclick="() => hidingMode = HidingMode.Collapse">
+        <label class="btn btn-outline-primary" for="HidingMode.Collapse">Collapse</label>
+
+        <input type="radio" class="btn-check" name="hidingMode" id="HidingMode.Hide" @onclick="() => hidingMode = HidingMode.Hide">
+        <label class="btn btn-outline-primary" for="HidingMode.Hide">Hide</label>
+    </div>
+
+    <div class="btn-group-vertical" role="group">
+        <input type="radio" class="btn-check" disabled name="isEnabled" id="IsEnabled.Label">
+        <label class="btn btn-outline-primary" for="IsEnabled.Label">IsEnabled</label>
+
+        <input type="radio" class="btn-check" name="isEnabled" id="IsEnabled.True" checked @onclick="() => isEnabled = true">
+        <label class="btn btn-outline-primary" for="IsEnabled.True">True</label>
+
+        <input type="radio" class="btn-check" name="isEnabled" id="IsEnabled.False" @onclick="() => isEnabled = false">
+        <label class="btn btn-outline-primary" for="IsEnabled.False">False</label>
+    </div>
+
+    <div class="btn-group-vertical" role="group">
+        <input type="range" class="form-range" min="-20" max="20" step="0.1" id="margin" @bind="margin" @bind:event="oninput">
+        <label for="margin" class="form-label">Margin (@margin)</label>
+
+        <input type="range" class="form-range" min="0" max="20" step="0.1" id="padding" @bind="padding" @bind:event="oninput">
+        <label for="padding" class="form-label">Padding (@padding)</label>
+
+        <input type="range" class="form-range" min="0" max="40" step="0.1" id="spacing" @bind="spacing" @bind:event="oninput">
+        <label for="spacing" class="form-label">Spacing (@spacing)</label>
+    </div>
+
+    <div class="btn-group-vertical" role="group">
+        <input type="radio" class="btn-check" disabled name="scrollBar" id="ScrollBar.Label">
+        <label class="btn btn-outline-primary" for="scrollBar.Label">ScrollBar</label>
+
+        <input type="radio" class="btn-check" name="scrollBar" id="ScrollBar.Auto" checked @onclick="() => scrollBar = ScrollBar.Auto">
+        <label class="btn btn-outline-primary" for="ScrollBar.Auto">Auto</label>
+
+        <input type="radio" class="btn-check" name="scrollBar" id="ScrollBar.None" @onclick="() => scrollBar = ScrollBar.None">
+        <label class="btn btn-outline-primary" for="ScrollBar.None">None</label>
+
+        <input type="radio" class="btn-check" name="scrollBar" id="ScrollBar.Overlay" @onclick="() => scrollBar = ScrollBar.Overlay">
+        <label class="btn btn-outline-primary" for="ScrollBar.Overlay">Overlay</label>
+
+        <input type="radio" class="btn-check" name="scrollBar" id="ScrollBar.Always" @onclick="() => scrollBar = ScrollBar.Always">
+        <label class="btn btn-outline-primary" for="ScrollBar.Always">Always</label>
+    </div>
+
+</StackPanel>
+
+@code{
+    private bool isVisible = true;
+    private bool isEnabled = true;
+    private Justify justify = Justify.Normal;
+    private Align align = Align.Normal;
+    private Orientation orientation = Orientation.Vertical;
+    private StretchChildren stretchChildren = StretchChildren.None;
+    private HidingMode hidingMode = HidingMode.Collapse;
+    public decimal margin = 0;
+    public decimal padding = 10;
+    public decimal spacing = 10;
+    private ScrollBar scrollBar = ScrollBar.Auto;
+
+    private void Click()
+    {
+        
+    }
+}
