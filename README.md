@@ -11,7 +11,7 @@ Layout panels for use in Blazor
    In `_Host.cshtml`, `<head></head>` section add: `<link href="_content/BlazorLayouts/blazor-layouts.css" rel="stylesheet"/>`
    
 # Use
-```
+```razor
 <StackPanel Orientation="Orientation.Vertical" 
             Justify="Justify.Normal"
             Align="Align.Normal"
