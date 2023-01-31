@@ -1,6 +1,6 @@
 ![logo](https://user-images.githubusercontent.com/57046415/215855661-120127a4-c1af-4d71-9f87-2ad9264b7f4d.png)
 
-# BlazorLayouts
+# Blazor Layouts
 Layout panels for Blazor
 
 # Install
