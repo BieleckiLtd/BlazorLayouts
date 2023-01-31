@@ -8,16 +8,31 @@ Layout panels for Blazor
 
    `dotnet add package BlazorLayouts --version 1.0.0`
 
-2. In project (Blazor Server):
+2. In Blazor Server:
 
-   In `_Host.cshtml`, `<head></head>` section add: `<link href="_content/BlazorLayouts/blazor-layouts.css" rel="stylesheet"/>`
+   In `_Host.cshtml`, `<head></head>` add: `<link href="_content/BlazorLayouts/blazor-layouts.css" rel="stylesheet"/>`
    
 # Use
+
+## StackPanel
+
+Minimal example:
+```razor
+<StackPanel>
+    <button>One</button>
+    <button>Two</button>
+    <button>Three</button>
+    <button>Four</button>
+    <button>Five</button>
+</StackPanel>
+```
+
+Full example:
 ```razor
 <StackPanel Orientation="Orientation.Vertical" 
             Justify="Justify.Normal"
             Align="Align.Normal"
-            StretchChildren="@stretchChildren"
+            StretchChildren="StretchChildren.None"
             IsVisible="true"
             HidingMode="HidingMode.Collapse"
             IsEnabled="true"
@@ -26,11 +41,13 @@ Layout panels for Blazor
             Spacing="10"
             HorizontalScrollBar="ScrollBar.Auto"
             VerticalScrollBar="ScrollBar.Auto"
-            Style="height: 300px" Background="lightgray">
-    <button class="btn btn-primary">One</button>
-    <button class="btn btn-primary">Two</button>
-    <button class="btn btn-primary">Three</button>
-    <button class="btn btn-primary">Four</button>
-    <button class="btn btn-primary">Five</button>
+            Style="height: 300px"
+            Background="lightgray">
+    <button>One</button>
+    <button>Two</button>
+    <button>Three</button>
+    <button>Four</button>
+    <button>Five</button>
 </StackPanel>
 ```
+
