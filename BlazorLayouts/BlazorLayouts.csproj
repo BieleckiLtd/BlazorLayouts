@@ -12,6 +12,7 @@
         <PackageProjectUrl>https://github.com/BieleckiLtd/BlazorLayouts</PackageProjectUrl>
         <RepositoryUrl>https://github.com/BieleckiLtd/BlazorLayouts</RepositoryUrl>
         <PackageIcon>bl-logo.png</PackageIcon>
+		<Version>1.0.1</Version>
     </PropertyGroup>
 	
 
