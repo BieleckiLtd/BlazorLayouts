@@ -1,20 +1,26 @@
 @page "/stack-panel"
-@using BlazorLayouts
 
 <PageTitle>StackPanel</PageTitle>
+
+<style>
+    .mud-paper {
+        text-align: center;
+        padding: 6px;
+        border: solid var(--mud-palette-primary) 2px;
+    }
+</style>
 
 <h1>StackPanel</h1>
 
 <p class="mt-3">Minimal example:</p>
 <StackPanel>
-    <button>One</button>
-    <button>Two</button>
-    <button>Three</button>
-    <button>Four</button>
-    <button>Five</button>
+    <MudBlazor.MudPaper>One</MudBlazor.MudPaper>
+    <MudBlazor.MudPaper>Two</MudBlazor.MudPaper>
+    <MudBlazor.MudPaper>Three</MudBlazor.MudPaper>
 </StackPanel>
 
 <p class="mt-3">Interactive example:</p>
+
 <StackPanel Orientation="orientation" 
             Justify="@justify"
             Align="@align"
@@ -27,14 +33,14 @@
             Spacing="@spacing.ToString()"
             HorizontalScrollBar="@scrollBar"
             VerticalScrollBar="@scrollBar"
-            Background="whitesmoke"
+            Background="#202020"
             Class="border rounded-1 shadow-sm"
             Style="height: 300px">
-    <button>One</button>
-    <button>Two</button>
-    <button>Three</button>
-    <button>Four</button>
-    <button>Five</button>
+    <MudBlazor.MudPaper>One</MudBlazor.MudPaper>
+    <MudBlazor.MudPaper>Two</MudBlazor.MudPaper>
+    <MudBlazor.MudPaper>Three</MudBlazor.MudPaper>
+    <MudBlazor.MudPaper>Four</MudBlazor.MudPaper>
+    <MudBlazor.MudPaper>Five</MudBlazor.MudPaper>
 </StackPanel>
 
 <StackPanel Orientation="Orientation.Horizontal"
